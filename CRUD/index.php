@@ -7,7 +7,7 @@ $delete = false;
 $server = "localhost";
 $user = "root";
 $pass = "";
-$db = "notes";
+$db = "inotes";
 
 //create a connection
 $conn = mysqli_connect($server, $user, $pass, $db);
