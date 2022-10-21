@@ -7,7 +7,7 @@ $delete = false;
 $server = "localhost";
 $user = "root";
 $pass = "";
-$db = "inotes";
+$db = "notes";
 
 //create a connection
 $conn = mysqli_connect($server, $user, $pass, $db);
@@ -182,8 +182,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   ?>
 
 
-  <div class="container my-4">
-    <form action="index.php" method="POST">
+  <div class="container my-4 d-flex justify-content-center">
+    <form action="index.php" method="POST" class="d-flex justify-content-center flex-column" style="width:50%">
       <h2>Add a note</h2>
       <div class="mb-3 ">
         <label for="titel" class="form-label">Note Title</label>
@@ -203,7 +203,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
     <table id="myTable" class="table">
-      <thead>
+      <thead class="table-light">
         <tr>
           <th scope="col">S.No</th>
           <th scope="col">Title</th>
@@ -218,7 +218,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $sno = 0;
         while ($row = mysqli_fetch_assoc($result)) {
           $sno += 1;
-          echo "<tr>
+          echo "<tr class='table-danger'>
               <th scope='row'>" . $sno . "</th>
                   <td> " . $row['title'] . "</td>
                   <td>" . $row['description'] . "</td>
